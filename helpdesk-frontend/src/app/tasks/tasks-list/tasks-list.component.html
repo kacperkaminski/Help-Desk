@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+      <section>
+        <div class="row">
+          <h4>Tasks</h4>
+          <div class="col-xs-6"></div>
+          <div class="col-xs-2">
+            <input #taskSearchInput placeholder="Search task..." [(ngModel)]="name" (input)="searchTask(taskSearchInput.value)">
+          </div>
+          <div class="col-xs-2"></div>
+          <div class="col-xs-2">
+            <button type="button" class="btn btn-success" (click)="redirectNewTaskPage()">New Task</button>
+          </div>
+        </div>
+      </section>
+      <section class="main">
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Owner</th>
+              <th>Assigned to</th>
+              <th>Title</th>
+              <th>Status</th>
+              <th>Date Created</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let task of filteredTasks" [routerLink]="[task.id, 'edit']" >
+              <th scope="row">{{task.id}}</th>
+              <td>{{task.owner["firstName"]}} {{task.owner["lastName"]}}</td>
+              <td>
+                <div *ngIf="task.assignedTo">{{task.assignedTo["firstName"]}} {{task.assignedTo["lastName"]}}</div>
+                <div *ngIf="!task.assignedTo">Not assigned</div>
+              </td>
+              <td>{{task.title}}</td>
+              <td>{{task.status["statusName"]}}</td>
+              <td>{{task.date}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+  </div>
+</div>

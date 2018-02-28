@@ -1,0 +1,31 @@
+<div class="container">
+	<div class="row">
+		<div class="col">
+			<section>
+				<div class="row">
+					<h1>Roles</h1>
+				</div>
+			</section>
+			<section class="main">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th align="center">Role name</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr *ngFor="let role of roles">
+							<th scope="row">{{role.id}}</th>
+							<td>{{role.name}}</td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+		</div>
+	</div>
+</div>
+
+
+ 

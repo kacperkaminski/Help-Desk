@@ -1,0 +1,101 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="col-xs-12">
+            <button type="submit" class="btn btn-success" [disabled]="!userForm.valid">Save</button>
+            <button type="button" class="btn btn-danger" (click)="onCancel()">Cancel</button>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="firstName">First Name</label>
+              <input type="text" id="firstName" formControlName="firstName" class="form-control">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <input type="text" id="lastName" formControlName="lastName" class="form-control">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="text" id="email" formControlName="email" class="form-control">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input type="text" 
+                  id="username"
+                  formControlName="username" 
+                  class="form-control"
+                  #username>
+              <span *ngIf="userForm.get('username').hasError('usernameTaken') && userForm.get('username').touched" style="color: red"> Username already in use!</span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input 
+                  type="password" 
+                  id="password" 
+                  formControlName="password" 
+                  class="form-control">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="confirmPassword">Confirm Password</label>
+              <input 
+                  id="confirmPassword" 
+                  formControlName="confirmPassword"
+                  type="password" 
+                  class="form-control">
+              <span *ngIf="userForm.hasError('notSame') && userForm.get('confirmPassword').touched" style="color: red"> Passwords must be identical!</span>
+            </div>
+          </div>
+        </div>
+        <label>Set account status</label>
+        <div class="form-group">
+          <div class="radio">
+            <label>
+              <input type="radio" name="active" [value]="true"  formControlName="active"> Active
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="active" [value]="false"  formControlName="active"> Unactive
+            </label>
+          </div>
+        </div>
+        <label>Set account role</label>
+        <div class="form-group">
+          <div class="radio" *ngFor="let role of roles">
+            <label>
+              <input
+                type="radio"
+                formControlName="role"
+                [value]="role">{{ role.id}}. {{ role.name }}
+            </label>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

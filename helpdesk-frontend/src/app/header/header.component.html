@@ -1,0 +1,33 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-headerclass">
+      <a class="navbar-brand" role="presentation" routerLinkActive="active" routerLink="/" >Help Desk</a>
+    </div>
+
+    <!-- <button type="button" class="navbar-toogle collapsed" data-toogle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+      <span class="sr-only"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="pull-left" href="#"><img src=""></a> -->
+    <div class="collapse navbar-collapse" id="navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li  *ngIf="authService.isAdmin()" role="presentation" routerLinkActive="active" >
+          <a routerLink="/users">Users Managment</a>
+        </li>
+        <li *ngIf="authService.isAdmin()" role="presentation" routerLinkActive="active">
+          <a routerLink="/roles">Roles List</a>
+        </li>
+        <li *ngIf="authService.isAuthenticated()" role="presentation" routerLinkActive="active">
+          <a routerLink="/tasks">Tasks</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a routerLink="/login" *ngIf="!authService.isAuthenticated()" >Login</a></li>
+        <li><a style="cursor: pointer" *ngIf="authService.isAuthenticated()"> Welcome {{userData.firstName}} {{userData.lastName}}</a></li>
+        <li><a style="cursor: pointer" (click)="onLogout()" *ngIf="authService.isAuthenticated()">Logout</a></li>
+			</ul>
+    </div>
+  </div>
+</nav>

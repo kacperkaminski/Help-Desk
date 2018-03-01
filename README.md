@@ -36,5 +36,5 @@ Creating New user
 ![alt text](https://image.ibb.co/bYZHkx/2.jpg)  
 
 Tasks Managment
-![alt text](https://ibb.co/gMXf7c)  
+![alt text](https://image.ibb.co/jBHrDH/5.jpg)  
 

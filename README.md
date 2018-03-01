@@ -26,14 +26,15 @@ FrontEnd (localhost:4200) - type ng serve in Visual Studio Code
 Backend (localhost:8080) - run spring boot application using Eclipse IDE or create executable jar manually
 
 ## Screenshots
+EER Diagram
 ![alt text](https://image.ibb.co/kU4uXc/EER_diagram.jpg)  
-EER Diagram  
-  
+
+User Managment
 ![alt text](https://image.ibb.co/ffJzyH/1.jpg)  
-User Managment  
-  
-![alt text](https://image.ibb.co/bYZHkx/2.jpg)  
+
 Creating New user  
-  
-![alt text](https://preview.ibb.co/gyEuXc/4.jpg)  
+![alt text](https://image.ibb.co/bYZHkx/2.jpg)  
+
 Tasks Managment
+![alt text](https://ibb.co/gMXf7c)  
+
